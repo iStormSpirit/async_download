@@ -1,0 +1,347 @@
+[nitpick]
+minimum_version = "0.10.0"
+
+[".pre-commit-config.yaml"]
+[[".pre-commit-config.yaml".repos]]
+repo = "https://github.com/PyCQA/bandit"
+[[".pre-commit-config.yaml".repos.hooks]]
+id = "bandit"
+args = [ "--ini", "setup.cfg",]
+exclude = "tests/"
+
+
+[[".pre-commit-config.yaml".repos]]
+repo = "https://github.com/psf/black"
+[[".pre-commit-config.yaml".repos.hooks]]
+id = "black"
+args = [ "--safe", "--quiet",]
+
+
+[[".pre-commit-config.yaml".repos]]
+repo = "https://github.com/asottile/blacken-docs"
+[[".pre-commit-config.yaml".repos.hooks]]
+id = "blacken-docs"
+additional_dependencies = [ "black==22.1.0",]
+
+
+[[".pre-commit-config.yaml".repos]]
+repo = "https://github.com/PyCQA/flake8"
+[[".pre-commit-config.yaml".repos.hooks]]
+id = "flake8"
+additional_dependencies = [ "flake8-blind-except", "flake8-bugbear", "flake8-comprehensions", "flake8-debugger", "flake8-docstrings", "flake8-isort", "flake8-polyfill", "flake8-pytest", "flake8-quotes", "flake8-typing-imports", "yesqa",]
+
+
+[[".pre-commit-config.yaml".repos]]
+repo = "https://github.com/pre-commit/pygrep-hooks"
+[[".pre-commit-config.yaml".repos.hooks]]
+id = "python-check-blanket-noqa"
+
+[[".pre-commit-config.yaml".repos.hooks]]
+id = "python-check-mock-methods"
+
+[[".pre-commit-config.yaml".repos.hooks]]
+id = "python-no-eval"
+
+[[".pre-commit-config.yaml".repos.hooks]]
+id = "python-no-log-warn"
+
+[[".pre-commit-config.yaml".repos.hooks]]
+id = "rst-backticks"
+
+
+[[".pre-commit-config.yaml".repos]]
+repo = "https://github.com/pre-commit/pre-commit-hooks"
+[[".pre-commit-config.yaml".repos.hooks]]
+id = "debug-statements"
+
+
+[[".pre-commit-config.yaml".repos]]
+repo = "https://github.com/asottile/pyupgrade"
+[[".pre-commit-config.yaml".repos.hooks]]
+id = "pyupgrade"
+args = [ "--py37-plus",]
+
+
+[[".pre-commit-config.yaml".repos]]
+repo = "https://github.com/PyCQA/isort"
+[[".pre-commit-config.yaml".repos.hooks]]
+id = "isort"
+
+
+[[".pre-commit-config.yaml".repos]]
+repo = "https://github.com/pre-commit/mirrors-mypy"
+[[".pre-commit-config.yaml".repos.hooks]]
+id = "mypy"
+args = [ "--show-error-codes",]
+
+
+[[".pre-commit-config.yaml".repos]]
+repo = "local"
+[[".pre-commit-config.yaml".repos.hooks]]
+id = "pylint"
+name = "pylint"
+language = "system"
+exclude = "tests/"
+types = [ "python",]
+
+
+[[".pre-commit-config.yaml".repos]]
+repo = "https://github.com/myint/autoflake"
+[[".pre-commit-config.yaml".repos.hooks]]
+id = "autoflake"
+args = [ "--in-place", "--remove-all-unused-imports", "--remove-unused-variables", "--remove-duplicate-keys", "--ignore-init-module-imports",]
+
+
+[[".pre-commit-config.yaml".repos]]
+repo = "https://github.com/pre-commit/mirrors-prettier"
+[[".pre-commit-config.yaml".repos.hooks]]
+id = "prettier"
+stages = [ "commit",]
+
+
+[[".pre-commit-config.yaml".repos]]
+repo = "https://github.com/commitizen-tools/commitizen"
+[[".pre-commit-config.yaml".repos.hooks]]
+id = "commitizen"
+stages = [ "commit-msg",]
+
+
+[[".pre-commit-config.yaml".repos]]
+repo = "https://github.com/pre-commit/pre-commit-hooks"
+[[".pre-commit-config.yaml".repos.hooks]]
+id = "end-of-file-fixer"
+
+[[".pre-commit-config.yaml".repos.hooks]]
+id = "trailing-whitespace"
+
+
+[[".pre-commit-config.yaml".repos]]
+repo = "https://github.com/openstack/bashate"
+[[".pre-commit-config.yaml".repos.hooks]]
+id = "bashate"
+args = [ "-i", "E006",]
+
+
+[[".pre-commit-config.yaml".repos]]
+repo = "https://github.com/shellcheck-py/shellcheck-py"
+[[".pre-commit-config.yaml".repos.hooks]]
+id = "shellcheck"
+
+
+[".codeclimate.yml"]
+version = "2"
+
+[".readthedocs.yml"]
+version = 2
+formats = "all"
+
+[".github/workflows/python.yaml"]
+name = "Python"
+on = [ "push",]
+
+[".editorconfig"]
+root = true
+
+["package.json"]
+contains_keys = [ "name", "version", "repository.type", "repository.url", "release.plugins",]
+
+[nitpick.meta]
+name = "package.json"
+url = "https://github.com/yarnpkg/website/blob/master/lang/en/docs/package-json.md"
+
+[nitpick.styles]
+include = [ "py://nitpick/resources/python/39.toml", "py://nitpick/resources/python/absent.toml", "py://nitpick/resources/python/bandit.toml", "py://nitpick/resources/python/black.toml", "py://nitpick/resources/python/flake8.toml", "py://nitpick/resources/python/pre-commit-hooks.toml", "py://nitpick/resources/python/isort.toml", "py://nitpick/resources/python/mypy.toml", "py://nitpick/resources/python/poetry.toml", "py://nitpick/resources/python/pylint.toml", "py://nitpick/resources/python/radon.toml", "py://nitpick/resources/python/readthedocs.toml", "py://nitpick/resources/python/sonar-python.toml", "py://nitpick/resources/python/tox.toml", "py://nitpick/resources/python/github-workflow.toml", "py://nitpick/resources/python/autoflake.toml", "py://nitpick/resources/any/prettier.toml", "py://nitpick/resources/any/codeclimate.toml", "py://nitpick/resources/any/commitizen.toml", "py://nitpick/resources/any/editorconfig.toml", "py://nitpick/resources/any/git-legal.toml", "py://nitpick/resources/any/pre-commit-hooks.toml", "py://nitpick/resources/any/markdownlint.toml", "py://nitpick/resources/shell/bashate.toml", "py://nitpick/resources/shell/shellcheck.toml", "py://nitpick/resources/javascript/package-json.toml",]
+
+["pyproject.toml".build-system]
+requires = [ "poetry-core>=1.0.0",]
+build-backend = "poetry.core.masonry.api"
+
+["setup.cfg".flake8]
+ignore = "D107,D202,D203,D401,E203,E402,E501,W503"
+max-line-length = 120
+inline-quotes = "double"
+exclude = ".tox,build"
+
+["setup.cfg".isort]
+line_length = 120
+skip = ".tox,build"
+known_first_party = "tests"
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+combine_as_imports = true
+
+["setup.cfg".mypy]
+ignore_missing_imports = true
+follow_imports = "normal"
+strict_optional = true
+warn_no_return = true
+warn_redundant_casts = true
+warn_unused_ignores = false
+
+[".pylintrc".MASTER]
+jobs = 1
+extension-pkg-whitelist = "pydantic"
+
+[".pylintrc".REPORTS]
+output-format = "colorized"
+
+[".pylintrc".BASIC]
+bad-functions = "map,filter"
+good-names = "i,j,k,e,ex,Run,_,id,rv,c"
+
+[".pylintrc".FORMAT]
+max-line-length = 120
+max-module-lines = 1000
+indent-after-paren = 4
+
+[".pylintrc".SIMILARITIES]
+min-similarity-lines = 4
+ignore-comments = "yes"
+ignore-docstrings = "yes"
+ignore-imports = "no"
+
+[".pylintrc".VARIABLES]
+dummy-variables-rgx = "_$|dummy"
+
+[".readthedocs.yml".sphinx]
+configuration = "docs/conf.py"
+
+[".readthedocs.yml".python]
+[[".readthedocs.yml".python.install]]
+method = "pip"
+path = "."
+extra_requirements = [ "doc",]
+
+["tox.ini".tox]
+isolated_build = true
+
+["tox.ini".testenv]
+description = "Run tests with pytest and coverage"
+extras = "test"
+
+["tox.ini"."coverage:run"]
+branch = true
+parallel = true
+source = "src/"
+relative_files = true
+
+["tox.ini"."coverage:report"]
+show_missing = true
+precision = 2
+skip_covered = true
+skip_empty = true
+sort = "Cover"
+
+[".editorconfig"."*"]
+end_of_line = "lf"
+insert_final_newline = true
+indent_style = "space"
+indent_size = 4
+trim_trailing_whitespace = true
+
+[".editorconfig"."*.{js,json}"]
+charset = "utf-8"
+indent_size = 2
+
+[".editorconfig"."*.py"]
+charset = "utf-8"
+
+[".editorconfig"."*.{yml,yaml,md,rb}"]
+indent_size = 2
+
+[".editorconfig".Makefile]
+indent_style = "tab"
+
+[nitpick.files."setup.cfg"]
+comma_separated_values = [ "flake8.ignore", "flake8.exclude", "isort.skip", "isort.known_first_party",]
+
+[nitpick.files.absent]
+"requirements.txt" = "Install poetry, run 'poetry init' to create pyproject.toml, and move dependencies to it"
+".isort.cfg" = "Move values to setup.cfg, section [isort]"
+Pipfile = "Use pyproject.toml instead"
+"Pipfile.lock" = "Use pyproject.toml instead"
+".venv" = ""
+".pyup.yml" = "Configure safety instead: https://github.com/pyupio/safety#using-safety-with-a-ci-service"
+
+[nitpick.files.present]
+".pre-commit-config.yaml" = "Create the file with the contents below, then run 'pre-commit install'"
+
+["pyproject.toml".tool.black]
+line-length = 120
+
+[".codeclimate.yml".plugins.bandit]
+enabled = true
+
+[".codeclimate.yml".plugins.pep8]
+enabled = false
+
+[".codeclimate.yml".plugins.pylint]
+enabled = false
+
+[".codeclimate.yml".plugins.radon]
+enabled = true
+
+[".codeclimate.yml".plugins.sonar-python]
+enabled = true
+
+[".codeclimate.yml".plugins.fixme]
+enabled = false
+
+[".codeclimate.yml".plugins.editorconfig]
+enabled = true
+
+[".codeclimate.yml".plugins.git-legal]
+enabled = true
+
+[".codeclimate.yml".plugins.markdownlint]
+enabled = false
+
+[".codeclimate.yml".plugins.shellcheck]
+enabled = true
+
+[".github/workflows/python.yaml".jobs.build]
+name = "${{ matrix.python-version }} ${{ matrix.os }}"
+runs-on = "${{ matrix.os }}"
+[[".github/workflows/python.yaml".jobs.build.steps]]
+name = "Checkout"
+uses = "actions/checkout@v3"
+
+[[".github/workflows/python.yaml".jobs.build.steps]]
+name = "Set up Python ${{ matrix.python-version }}"
+uses = "actions/setup-python@v4"
+
+[".github/workflows/python.yaml".jobs.build.steps.with]
+python-version = "${{ matrix.python-version }}"
+[[".github/workflows/python.yaml".jobs.build.steps]]
+name = "Install tox"
+run = "python -m pip install tox"
+
+["pyproject.toml".tool.poetry.dependencies]
+python = "^3.9"
+
+["pyproject.toml".tool.poetry.extras]
+lint = [ "pylint",]
+
+[".codeclimate.yml".plugins.radon.config]
+threshold = "C"
+
+[".codeclimate.yml".checks.file-lines.config]
+threshold = 1000
+
+[".codeclimate.yml".checks.method-complexity.config]
+threshold = 10
+
+[".github/workflows/python.yaml".jobs.build.strategy]
+fail-fast = false
+
+[".github/workflows/python.yaml".jobs.build.env]
+PYTHONUNBUFFERED = 1
+
+["pyproject.toml".tool.poetry.dependencies.pylint]
+version = "*"
+optional = true
+
+[".github/workflows/python.yaml".jobs.build.strategy.matrix]
+os = [ "ubuntu-latest", "windows-latest", "macos-latest",]
+python-version = [ "3.11", "3.10", "3.9", "3.8", "3.7",]

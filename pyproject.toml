@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "radium-test"
+version = "0.1.0"
+description = ""
+authors = ["iStormSpirit <nowson1a@gmail.com>"]
+readme = "README.md"
+packages = [{include = "radium_test"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+aiohttp = "^3.8.4"
+wemake-python-styleguide = "^0.17.0"
+nitpick = "^0.33.1"
+pytest = "^7.2.2"
+pytest-asyncio = "^0.21.0"
+[tool.poetry.dependencies.pylint]
+version = "*"
+optional = true
+
+
+[tool.poetry.extras]
+lint = ["pylint"]
+
+[tool.black]
+line-length = 120
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
